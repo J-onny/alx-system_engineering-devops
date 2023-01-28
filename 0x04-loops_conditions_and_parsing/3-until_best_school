@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#using untill to pront Best School five times
+
+i=0
+until [ $i -ge 10 ]
+do
+    echo "Best School"
+#    i=$((i+1))
+    ((i++))
+done
+
+
