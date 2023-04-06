@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#configuring subdomains
 check_domain() {
     # Check for a valid domain
     SUBDOMAINS=("www" "lb-01" "web-01" "web-02")
