@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#configure nginx
+
+cp -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+nginx -s reload
