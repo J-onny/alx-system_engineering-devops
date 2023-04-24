@@ -1,0 +1,16 @@
+Description of what happens under the hood during a web request
+A DNS request is made
+The browser makes a DNS request to a DNS server that is tasked to resolve the domain name which in this case is www.googl.com into its IP address. It does so by looking into its database and returns an IP address that corresponds with the stated domain name
+After the DNS request comes the TCP/IP
+Here, the browser uses the returned IP address to establish a TCP connection with the webserver associated with the IP address. This protocol (TCP) breaks down the data into small packets that can be easily transmitted in correct order without distortion then the Ip routes the gathered packets to their official destination.
+Then comes the Firewall
+The TCP/IP connection is the filtered through a firewall basing on the set rules and prescribed policies to deny or allow certain kinds of traffic. This is done to ensure that no threats and attacks are transmitted along with the requested data by the browser.
+HTTPS/SSL
+Then using the HTTPS/SSL if the site was configured to use the secure version of the http, an encrypted connection is made between the browser and the webserver with the help of the secure socket layer (SSL). This ensure that the transmitted data is not prone to interception and alteration.
+The Load balancer then Kicks in
+The load balancer then comes in to distribute the incoming requests across a number of webservers. This is so that the performance of each of the servers is kept optimum by preventing server overload that can be due to a single server being loaded with immense traffic.
+The webserver jumps into action
+The request for the www.google.com then arrives at the web server which then generates response in form of an html, CSS, js file and other file components of the requested page and sends them back to the user through the browser.
+In case the requested data is dynamic in nature, the request is directed to an application server, the application server then runs the related scripts and obtains corresponding data from the database, manipulates it and then sends it back to the browser as requested by the user.
+Allof the data being accessed is stored in a database and when the user is inputting data into the browser for example personal details or product details, these details are stored and retrieved from the database that handles the user information
+

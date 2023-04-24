@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#configuring subdomains
+check_domain() {
+    # Check for a valid domain
+    SUBDOMAINS=("www" "lb-01" "web-01" "web-02")
+    domain="$1"
+    subdomain="$2"
+    
+    if [ -z "$subdomain" ]; then
+        for sub in "${SUBDOMAINS[@]}"; do
+            dig_output=$(dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | tail -n1)
+            record_type=$(echo "$dig_output" | awk '{print $4}')
+            target=$(echo "$dig_output" | awk '{print $5}')
+            echo "The subdomain $sub is a $record_type record and points to $target"
+        done
+    else
+        dig_output=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -n1)
+        record_type=$(echo "$dig_output" | awk '{print $4}')
+        target=$(echo "$dig_output" | awk '{print $5}')
+        echo "The subdomain $subdomain is a $record_type record and points to $target"
+    fi
+}
+
+check_domain "$1" "$2"
+
