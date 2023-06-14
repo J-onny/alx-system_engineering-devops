@@ -1,2 +1,2 @@
-i#!/bin/bash
-chmod 007
+#!/bin/bash
+ihmod 007 hello
